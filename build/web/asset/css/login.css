@@ -309,6 +309,9 @@ header .menu-bar .cart-search .search-dropdown{
 .login-info{
     padding-bottom: 140px;
 }
+.login-info .error{
+    color: red;
+}
 .login-info .form-group{
     padding-bottom: 20px;
     

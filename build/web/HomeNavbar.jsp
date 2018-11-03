@@ -5,15 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    String username = (String)request.getAttribute("username");
-%>
 <header>
     <div class="row top-header">
         <div class="container">
             <nav class="navbar hidden-sm hidden-xs">
                 <div class="col-lg-3 col-md-5 hidden-xs hidden-sm " id="head">
-                    Chào mừng <%=username%> đến với BigFood !
+                    Chào mừng đến với BigFood    ${username}
                 </div>
                 <div class="col-lg-9 col-md-7 col-sm-9">
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
@@ -32,7 +29,6 @@
             <div class="logo">
                 <img src="images/logo_03.gif" alt="Logo">
             </div>
-
 
              <nav class="navbar hidden-xs hidden-sm">
                 <div class=" info">

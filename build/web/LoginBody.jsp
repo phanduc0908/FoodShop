@@ -16,7 +16,8 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <h3>Thông tin tài khoản</h3>
-                <form action="AccountController" id="loginForm" method="POST">
+                <h4 class="error">${errorLogin}</h4>
+                <form action="CustomerLoginServelet" id="loginForm" method="POST">
                     <div class="form-group">
                         <label for="username">Tên đăng nhập:<span>*</span></label>
                         <input type="username" class="form-control" id="username" name="username">

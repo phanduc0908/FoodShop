@@ -30,7 +30,7 @@ public class DAOKhachHang {
 
     public boolean login(String userName, String pass) {
         String sql = "Select * from KhachHang where username=? and"
-                + " password=? where status=1";
+                + " password = ? and status=1";
         try {
             PreparedStatement pre = conn.prepareStatement(sql);
             pre.setString(1, userName);
@@ -147,8 +147,9 @@ public class DAOKhachHang {
 
     public static void main(String[] args) {
         DBConnection dbcon = new DBConnection();
-        KhachHang kh = new KhachHang("Ngo Hai Anh", "Nam Dinh", "0983654187", "anhnhse", "123654");
+        //KhachHang kh = new KhachHang("Ngo Hai Anh", "Nam Dinh", "0983654187", "anhnhse", "123654");
         DAOKhachHang dao = new DAOKhachHang(dbcon);
-        dao.addKhachHang(kh);
+        //dao.addKhachHang(kh);
+        System.out.println(dao.login("haihn", "hai123"));
     }
 }

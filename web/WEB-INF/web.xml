@@ -24,6 +24,10 @@
         <servlet-name>AccountController</servlet-name>
         <servlet-class>controller.AccountController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CustomerLoginServelet</servlet-name>
+        <servlet-class>controller.CustomerLoginServelet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CustomerController</servlet-name>
         <url-pattern>/CustomerController</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/AccountController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustomerLoginServelet</servlet-name>
+        <url-pattern>/CustomerLoginServelet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
