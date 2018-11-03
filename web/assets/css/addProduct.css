@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 28, 2018, 11:45:40 AM
+    Author     : Phan Van Duc
+*/
+
+.form-control:focus{
+    border-color: #e70c81;
+}
+.form-group h2{
+    font-size: 24px;
+    color: #c69c6d;
+    font-family: serif;
+    padding-bottom: 10px;
+}
