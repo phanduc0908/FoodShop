@@ -7,4 +7,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<%@include file="HomePage.jsp" %>
+<a href="HomePage.jsp">Come back</a>

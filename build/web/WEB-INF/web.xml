@@ -37,8 +37,20 @@
         <servlet-class>controller.AddCustomerServelet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CheckOutAccount</servlet-name>
-        <servlet-class>controller.CheckOutAccount</servlet-class>
+        <servlet-name>LogoutAccount</servlet-name>
+        <servlet-class>controller.LogoutAccount</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductPagingServele</servlet-name>
+        <servlet-class>paging.ProductPagingServelet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>demoSendData</servlet-name>
+        <servlet-class>paging.demoSendData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToCart</servlet-name>
+        <servlet-class>Cart.AddToCart</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CustomerController</servlet-name>
@@ -77,8 +89,16 @@
         <url-pattern>/AddCustomerServelet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CheckOutAccount</servlet-name>
-        <url-pattern>/CheckOutAccount</url-pattern>
+        <servlet-name>LogoutAccount</servlet-name>
+        <url-pattern>/LogoutAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductPagingServele</servlet-name>
+        <url-pattern>/paging</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToCart</servlet-name>
+        <url-pattern>/AddToCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

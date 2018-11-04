@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Phan Van Duc
  */
-public class CheckOutAccount extends HttpServlet {
+public class LogoutAccount extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,6 +30,7 @@ public class CheckOutAccount extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         
         HttpSession session = request.getSession();
         session.invalidate();

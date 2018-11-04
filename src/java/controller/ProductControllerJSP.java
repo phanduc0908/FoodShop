@@ -5,6 +5,7 @@
  */
 package controller;
 
+import com.sun.java.swing.plaf.windows.resources.windows;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -112,12 +113,17 @@ public class ProductControllerJSP extends HttpServlet {
                     }
                 }
 
-                RequestDispatcher dispatch = request.getRequestDispatcher("/AddToCart.jsp");
-
+                RequestDispatcher dispatch = request.getRequestDispatcher("/HomePage.jsp");
                 dispatch.forward(request, response);
-                //response.sendRedirect("showCart.jsp");
+                response.sendRedirect("HomePage.jsp");
             }
             if (service.equalsIgnoreCase("showCart")) {
+                if(session.getAttribute("cartID") == null){
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('User or password incorrect');");
+                    out.println("location='HomePage.jsp';");
+                    out.println("</script>");
+                }
                 ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
                 request.setAttribute("listCart", listCart);
                 RequestDispatcher dispatch = request.getRequestDispatcher("/Cart.jsp");

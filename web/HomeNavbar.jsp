@@ -16,7 +16,7 @@
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
                         <li><a href="Register.jsp">Đăng ký</a></li>
                         <li><a href="Login.jsp">Đăng nhập</a></li>
-                        <li><a href="CheckoutAccount.jsp" onclick="alert('Đăng xuất thành công')">Đăng xuất</a></li>
+                        <li><a href="LogoutAccount" onclick="alert('Đăng xuất thành công')">Đăng xuất</a></li>
                         <li><a href="ProductControllerJSP?service=showCart">Giỏ hàng</a></li>
                     </ul>
                 </div>
@@ -27,7 +27,7 @@
         <!-- Logo -->
         <div class="row">
             <div class="logo">
-                <img src="images/logo_03.gif" alt="Logo">
+                <a href="HomePage.jsp"><img src="images/logo_03.gif" alt="Logo"></a>
             </div>
 
              <nav class="navbar hidden-xs hidden-sm">

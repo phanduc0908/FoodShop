@@ -20,61 +20,6 @@
         </div>
         <div class="products">
             <div class="row">
-                <!--                <div class="col-md-4">
-                                    <div class="products-img">
-                                        <img src="images/products/sp1_03.png" alt="">
-                                        <div class="add-to-cart">
-                                            <a href="#" class="btn btn-warning" role="button">Thêm vào giỏ hàng</a>
-                                        </div>
-                                    </div>
-                                    <div class="mo-ta-sp">
-                                        <p>245.000 Đ</p>
-                                        <a href="#"><h3>Bánh Nướng Augosuti Alena</h3></a>
-                                        <p>Thêm phần mô tả</p>
-                
-                                    </div>  
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="products-img">
-                                        <img src="images/products/sp1_03.png" alt="">
-                                        <div class="add-to-cart">
-                                            <a href="#" class="btn btn-warning" role="button">Thêm vào giỏ hàng</a>
-                                        </div>
-                                    </div>
-                                    <div class="mo-ta-sp">
-                                        <p>245.000 Đ</p>
-                                        <a href="#"><h3>Bánh Nướng Augosuti Alena</h3></a>
-                                        <p>Thêm phần mô tả</p>
-                                    </div>  
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="products-img">
-                                        <img src="images/products/sp1_03.png" alt="">
-                                        <div class="add-to-cart">
-                                            <a href="#" class="btn btn-warning" role="button">Thêm vào giỏ hàng</a>
-                                        </div>
-                                    </div>
-                                    <div class="mo-ta-sp">
-                                        <p>245.000 Đ</p>
-                                        <a href="#"><h3>Bánh Nướng Augosuti Alena</h3></a>
-                                        <p>Thêm phần mô tả</p>
-                
-                                    </div>  
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="products-img">
-                                        <img src="images/products/sp1_03.png" alt="">
-                                        <div class="add-to-cart">
-                                            <a href="#" class="btn btn-warning" role="button">Thêm vào giỏ hàng</a>
-                                        </div>
-                                    </div>
-                                    <div class="mo-ta-sp">
-                                        <p>245.000 Đ</p>
-                                        <a href="#"><h3>Bánh Nướng Augosuti Alena</h3></a>
-                                        <p>Thêm phần mô tả</p>
-                
-                                    </div>  
-                                </div>-->
               <%
                   while(rsContent.next()){
                       out.println("<div class=\"col-md-4\">");
@@ -88,7 +33,7 @@
                       out.println("    <p>"+rsContent.getString(4)+" $</p>");
                       out.println("    <a href=\"#\"><h3>"+rsContent.getString(2)+"</h3></a>");
                       out.println("    <p>"+rsContent.getString(6)+"</p>");
-                      out.println("    </div>");
+                      out.println("  </div>");
                       out.println(" </div>");
                   }
               %>
