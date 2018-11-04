@@ -9,15 +9,15 @@
     <div class="row top-header">
         <div class="container">
             <nav class="navbar hidden-sm hidden-xs">
-                <div class="col-lg-3 col-md-5 hidden-xs hidden-sm " id="head">
-                    Chào mừng đến với BigFood    ${username}
+                <div class="col-md-6" id="head">
+                    Chào mừng đến với BigFood <span style="color: #ff0000">${fullName}</span>
                 </div>
-                <div class="col-lg-9 col-md-7 col-sm-9">
+                <div class="col-md-6">
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
                         <li><a href="Register.jsp">Đăng ký</a></li>
                         <li><a href="Login.jsp">Đăng nhập</a></li>
-                        <li><a href="#">Đăng xuất</a></li>
-                        <li><a href="Cart.jsp">Giỏ hàng</a></li>
+                        <li><a href="CheckoutAccount.jsp" onclick="alert('Đăng xuất thành công')">Đăng xuất</a></li>
+                        <li><a href="ProductControllerJSP?service=showCart">Giỏ hàng</a></li>
                     </ul>
                 </div>
             </nav>

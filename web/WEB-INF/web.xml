@@ -28,6 +28,18 @@
         <servlet-name>CustomerLoginServelet</servlet-name>
         <servlet-class>controller.CustomerLoginServelet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HomeMenuProducts</servlet-name>
+        <servlet-class>controller.HomeMenuProducts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCustomerServelet</servlet-name>
+        <servlet-class>controller.AddCustomerServelet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckOutAccount</servlet-name>
+        <servlet-class>controller.CheckOutAccount</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CustomerController</servlet-name>
         <url-pattern>/CustomerController</url-pattern>
@@ -55,6 +67,18 @@
     <servlet-mapping>
         <servlet-name>CustomerLoginServelet</servlet-name>
         <url-pattern>/CustomerLoginServelet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeMenuProducts</servlet-name>
+        <url-pattern>/HomeMenuProducts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCustomerServelet</servlet-name>
+        <url-pattern>/AddCustomerServelet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckOutAccount</servlet-name>
+        <url-pattern>/CheckOutAccount</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

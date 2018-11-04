@@ -6,20 +6,17 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.DAOKhachHang;
-import model.DBConnection;
 
 /**
  *
  * @author Phan Van Duc
  */
-public class CustomerLoginServelet extends HttpServlet {
+public class CheckOutAccount extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,24 +30,10 @@ public class CustomerLoginServelet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        DBConnection dbConn = new DBConnection();
-        DAOKhachHang daoKH = new DAOKhachHang(dbConn);
+        
         HttpSession session = request.getSession();
-        /* TODO output your page here. You may use following sample code. */
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        boolean isLogin = daoKH.login(username, password);
-        String fullName = daoKH.getFullname(username);
-        if (isLogin) {
-            session.setAttribute("username", username);
-            session.setAttribute("fullName", fullName);
-            response.sendRedirect("HomePage.jsp");
-        }else{
-            request.setAttribute("errorLogin", "Login fail, please try again");
-            request.getRequestDispatcher("Login.jsp").forward(request, response);
-        }
+        session.invalidate();
+        request.getRequestDispatcher("HomePage.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

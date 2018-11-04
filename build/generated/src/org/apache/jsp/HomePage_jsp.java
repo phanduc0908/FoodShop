@@ -87,24 +87,20 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-
-    String username = (String)request.getAttribute("username");
-
-      out.write("\r\n");
       out.write("<header>\r\n");
       out.write("    <div class=\"row top-header\">\r\n");
       out.write("        <div class=\"container\">\r\n");
       out.write("            <nav class=\"navbar hidden-sm hidden-xs\">\r\n");
-      out.write("                <div class=\"col-lg-3 col-md-5 hidden-xs hidden-sm \" id=\"head\">\r\n");
-      out.write("                    Chào mừng ");
-      out.print(username);
-      out.write(" đến với BigFood !\r\n");
+      out.write("                <div class=\"col-md-6\" id=\"head\">\r\n");
+      out.write("                    Chào mừng đến với BigFood <span style=\"color: #ff0000\">");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${fullName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</span>\r\n");
       out.write("                </div>\r\n");
-      out.write("                <div class=\"col-lg-9 col-md-7 col-sm-9\">\r\n");
+      out.write("                <div class=\"col-md-6\">\r\n");
       out.write("                    <ul class=\"nav navbar-nav navbar-right hidden-xs hidden-sm\">\r\n");
       out.write("                        <li><a href=\"Register.jsp\">Đăng ký</a></li>\r\n");
       out.write("                        <li><a href=\"Login.jsp\">Đăng nhập</a></li>\r\n");
-      out.write("                        <li><a href=\"#\">Đăng xuất</a></li>\r\n");
+      out.write("                        <li><a href=\"checkout.jsp\" onclick=\"alert('Check out successfull')\">Đăng xuất</a></li>\r\n");
       out.write("                        <li><a href=\"Cart.jsp\">Giỏ hàng</a></li>\r\n");
       out.write("                    </ul>\r\n");
       out.write("                </div>\r\n");
@@ -117,7 +113,6 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"logo\">\r\n");
       out.write("                <img src=\"images/logo_03.gif\" alt=\"Logo\">\r\n");
       out.write("            </div>\r\n");
-      out.write("\r\n");
       out.write("\r\n");
       out.write("             <nav class=\"navbar hidden-xs hidden-sm\">\r\n");
       out.write("                <div class=\" info\">\r\n");
@@ -238,15 +233,6 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-
-//    DBConnection dbconn = new DBConnection();
-//    DAOHangSanXuat dao = new DAOHangSanXuat(dbconn);
-//    ArrayList<String> listHangSanXuat = new ArrayList<>();
-//
-//    String query = "select * from HangSanXuat where status = 1";
-//    ResultSet rs = dbconn.getData(query);
-
-
       out.write("\r\n");
       out.write("<div class=\"menu\">\r\n");
       out.write("    <div class=\"danh-muc-sp\">\r\n");
@@ -260,6 +246,7 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
 //                    while(rs.next()){
 //                        out.println(" <li><a href=\"#\">"+rs.getString(2)+"</a></li>");
 //                    }
+                    
                 
       out.write("\r\n");
       out.write("            </ul>\r\n");
@@ -351,8 +338,6 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                    </div>  \r\n");
       out.write("                </div>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("    </div>\r\n");

@@ -62,7 +62,6 @@ public class DAOKhachHang {
         } catch (SQLException ex) {
             Logger.getLogger(DAOKhachHang.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return n;
     }
 
@@ -133,7 +132,7 @@ public class DAOKhachHang {
         return n;
     }
     public boolean isDuplicateUser(String username){
-        String query = "SELECT * FROM KhachHang WHERE username=" + username;
+        String query = "SELECT * FROM KhachHang WHERE username = '" + username+"'";
         ResultSet rs = dbCon.getData(query);
         try {
             if(rs.next()){
@@ -144,6 +143,19 @@ public class DAOKhachHang {
         }
         return false;
     }
+    // get full name 
+    public String getFullname(String username){
+        String query = "SELECT * FROM KhachHang WHERE username = '" + username+"'";
+        ResultSet rs = dbCon.getData(query);
+        try {
+            if(rs.next()){
+                return rs.getString(2);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return "";
+    }
 
     public static void main(String[] args) {
         DBConnection dbcon = new DBConnection();
@@ -151,5 +163,7 @@ public class DAOKhachHang {
         DAOKhachHang dao = new DAOKhachHang(dbcon);
         //dao.addKhachHang(kh);
         System.out.println(dao.login("haihn", "hai123"));
+        System.out.println(dao.isDuplicateUser("anhnth"));
+        System.out.println(dao.getFullname("anhnth"));
     }
 }

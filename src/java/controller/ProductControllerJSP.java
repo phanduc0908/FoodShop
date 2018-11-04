@@ -59,8 +59,7 @@ public class ProductControllerJSP extends HttpServlet {
                 request.setAttribute("title", "List all products");
 
                 // dispatch to View
-                RequestDispatcher dispatch = request.getRequestDispatcher("/listProduct.jsp");
-
+                RequestDispatcher dispatch = request.getRequestDispatcher("HomeContent.jsp");
                 dispatch.forward(request, response);
             }
             if (service.equalsIgnoreCase("addToCart")) {
@@ -121,7 +120,7 @@ public class ProductControllerJSP extends HttpServlet {
             if (service.equalsIgnoreCase("showCart")) {
                 ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
                 request.setAttribute("listCart", listCart);
-                RequestDispatcher dispatch = request.getRequestDispatcher("/showCart.jsp");
+                RequestDispatcher dispatch = request.getRequestDispatcher("/Cart.jsp");
                 dispatch.forward(request, response);
             }
             if (service.equalsIgnoreCase("remove")) {

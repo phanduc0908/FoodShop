@@ -33,7 +33,7 @@
                 <h3>Bạn chưa có tài khoản ?</h3>
                 <p>Đăng ký tài khoản để mua hàng nhanh hơn. Theo dõi đơn đặt hàng, vận chuyển. 
                     Cập nhật các tin tức sự kiện và các chương trình giảm giá của chúng tôi.</p>
-                <button type="button" class="btn btn-warning"><a href="register.html">ĐĂNG KÝ</a></button>
+                <button type="button" class="btn btn-warning"><a href="Register.jsp">ĐĂNG KÝ</a></button>
             </div>
         </div>
     </div>

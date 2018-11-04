@@ -10,13 +10,9 @@
 <%@page import="model.DBConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-//    DBConnection dbconn = new DBConnection();
-//    DAOHangSanXuat dao = new DAOHangSanXuat(dbconn);
-//    ArrayList<String> listHangSanXuat = new ArrayList<>();
-//
-//    String query = "select * from HangSanXuat where status = 1";
-//    ResultSet rs = dbconn.getData(query);
-
+    DBConnection dbconnMenu = new DBConnection();
+    String sqlMenu = "Select * from HangSanXuat where status=1";
+    ResultSet rsMenu = dbconnMenu.getData(sqlMenu);
 %>
 <div class="menu">
     <div class="danh-muc-sp">
@@ -26,9 +22,9 @@
         <div class="list-sp">
             <ul> 
                 <%
-//                    while(rs.next()){
-//                        out.println(" <li><a href=\"#\">"+rs.getString(2)+"</a></li>");
-//                    }
+                    while(rsMenu.next()){
+                        out.println(" <li><a href=\"#\">"+rsMenu.getString(2)+"</a></li>");
+                    }
                 %>
             </ul>
         </div>

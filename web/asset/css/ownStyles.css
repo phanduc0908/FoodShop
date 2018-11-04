@@ -371,7 +371,9 @@ header .menu-bar .cart-search .search-dropdown{
     padding-top: 8px;
     padding-left: 8px;
 }
-
+.main-content .products{
+    padding-top: 30px;
+}
 .main-content .products .products-img{
     text-align: center;
 }
@@ -382,6 +384,7 @@ header .menu-bar .cart-search .search-dropdown{
     height: 30px;
     line-height: 30px;
     overflow: hidden;
+    margin-bottom: -8px;
 }
 .main-content .products .mo-ta-sp h3{
     text-align: center;
@@ -391,6 +394,7 @@ header .menu-bar .cart-search .search-dropdown{
     line-height: 30px;
     overflow: hidden;
     margin-top: 0px;
+    margin-bottom: -8px;
 }
 .main-content .products .mo-ta-sp .rate{
     text-align: center;

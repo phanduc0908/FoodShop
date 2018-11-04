@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,6 +29,13 @@ public class DAOSanPham {
         conn= dbConn.getConnection();
     }
 
+    // Get all products name
+    public ArrayList<String> listProductName(){
+        ArrayList<String> list = new ArrayList<>();
+        String query = "Select hname from HangSanXuat where status = 1";
+        return list;
+    }
+    
     public int getCurrentQuantity(String sid){
         int n =0;
         String query ="Select * from SanPham where sid = '" + sid+"'";

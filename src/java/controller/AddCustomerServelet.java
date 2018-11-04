@@ -5,8 +5,8 @@
  */
 package controller;
 
+import entity.KhachHang;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +19,7 @@ import model.DBConnection;
  *
  * @author Phan Van Duc
  */
-public class CustomerLoginServelet extends HttpServlet {
+public class AddCustomerServelet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,20 +37,45 @@ public class CustomerLoginServelet extends HttpServlet {
         DBConnection dbConn = new DBConnection();
         DAOKhachHang daoKH = new DAOKhachHang(dbConn);
         HttpSession session = request.getSession();
-        /* TODO output your page here. You may use following sample code. */
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        
+        String name = request.getParameter("sname");
+        String address = request.getParameter("address");
+        String phone = request.getParameter("phone");
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+        //check
+        boolean isEmpty = true;
+        boolean isDuplicate = daoKH.isDuplicateUser(user);
+        boolean isNumberPhone = false;
 
-        boolean isLogin = daoKH.login(username, password);
-        String fullName = daoKH.getFullname(username);
-        if (isLogin) {
-            session.setAttribute("username", username);
-            session.setAttribute("fullName", fullName);
-            response.sendRedirect("HomePage.jsp");
-        }else{
-            request.setAttribute("errorLogin", "Login fail, please try again");
-            request.getRequestDispatcher("Login.jsp").forward(request, response);
+        if (name.equals("") || address.equals("") || phone.equals("") || user.equals("") || pass.equals("")) {
+            request.setAttribute("errorRegister", "Tất cả các trường là bắt buộc");
+            request.getRequestDispatcher("Register.jsp").forward(request, response);
+        } else {
+            isEmpty = false;
         }
+        if(isDuplicate){
+            request.setAttribute("errorRegister", "Tên đăng nhập đã tồn tại");
+            request.getRequestDispatcher("Register.jsp").forward(request, response);
+        }
+        if (!phone.matches("\\d+")) {
+            request.setAttribute("errorRegister", "Định đạng số điện thoại chưa chính xác");
+            request.getRequestDispatcher("Register.jsp").forward(request, response);
+        } else {
+            isNumberPhone = true;
+        }
+        if (!isDuplicate && !isDuplicate && isNumberPhone) {
+            KhachHang kh = new KhachHang(name, address, phone, user, pass);
+            int n = daoKH.addKhachHang(kh);
+            if (n > 0) {
+                session.setAttribute("fullName", name);
+                request.setAttribute("successRegister", "Register success !!!");
+                request.getRequestDispatcher("Register.jsp").forward(request, response);
+            }
+        }
+        //check duplicate userName
+        //database
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

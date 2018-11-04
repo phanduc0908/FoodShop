@@ -8,7 +8,7 @@
 <div class="container">
     <div class="paging">
         <ul class="breadcrumb">
-            <li><a href="homepage.html">Home</a></li>
+            <li><a href="HomePage.jsp">Home</a></li>
             <li>Đăng ký</li>
         </ul>
     </div>
@@ -16,7 +16,9 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <h3>Thông tin tài khoản</h3>
-                <form action="" id="registerForm">
+                <h4 style="color: #1d9c33">${successRegister}</h4>
+                <h4 style="color: red">${errorRegister}</h4>
+                <form action="AddCustomerServelet" id="registerForm" method="POST">
                     <div class="form-group">
                         <label for="sname">Họ và tên:<span>*</span></label>
                         <input type="sname" class="form-control" id="sname" name="sname">
