@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FU%20Learnning/FA%202018/PRJ321/FoodShop/web/HomePage.jsp</file>
-            <file>file:/D:/FU%20Learnning/FA%202018/PRJ321/FoodShop/web/HomeNavbar.jsp</file>
-            <file>file:/D:/FU%20Learnning/FA%202018/PRJ321/FoodShop/src/java/controller/AccountController.java</file>
-            <file>file:/D:/FU%20Learnning/FA%202018/PRJ321/FoodShop/web/Login.jsp</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/web/LoginBody.jsp</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/web/WEB-INF/web.xml</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/src/java/controller/AdminController.java</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/src/java/entity/Admin.java</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/src/java/model/DAOKhachHang.java</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/src/java/entity/KhachHang.java</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/src/java/controller/AccountController.java</file>
+            <file>file:/D:/JavaWeb/Project/FoodShop/web/adminlogin.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,25 @@
+SMAP
+adminlogin_jsp.java
+JSP
+*S JSP
+*F
++ 0 adminlogin.jsp
+adminlogin.jsp
++ 1 HomeNavbar.jsp
+HomeNavbar.jsp
++ 2 LoginSlider.jsp
+LoginSlider.jsp
++ 3 HomeFooter.jsp
+HomeFooter.jsp
+*L
+5,29:51
+5#1,6:80
+10,6:86
+16:92,3
+17,50:95
+33#0,2:145
+5#2,9:147
+34#0,28:155
+5#3,104:183
+61#0,6:286
+*E
