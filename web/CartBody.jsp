@@ -47,14 +47,6 @@
                     }
                 %>
                 <tr>
-                    <td>2</td>
-                    <td>Dell</td>
-                    <td>50.000 Đ</td>
-                    <td><input type="text" name="quantity" id="quantity" value="1"></td>
-                    <td>50.000 Đ</td>
-                    <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
-                </tr>
-                <tr>
                     <td colspan="6">
                         <div class="row">
                             <div class="col-md-6 update-cart">

@@ -17,7 +17,7 @@
                         <li><a href="Register.jsp">Đăng ký</a></li>
                         <li><a href="Login.jsp">Đăng nhập</a></li>
                         <li><a href="LogoutAccount" onclick="alert('Đăng xuất thành công')">Đăng xuất</a></li>
-                        <li><a href="ProductControllerJSP?service=showCart">Giỏ hàng</a></li>
+                        <li><a href="ShowCart">Giỏ hàng</a></li>
                     </ul>
                 </div>
             </nav>
