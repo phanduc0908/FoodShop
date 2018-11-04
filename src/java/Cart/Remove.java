@@ -6,7 +6,6 @@
 package Cart;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +18,7 @@ import model.Cart;
  *
  * @author Phan Van Duc
  */
-public class ShowCart extends HttpServlet {
+public class Remove extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +32,20 @@ public class ShowCart extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        
         HttpSession session = request.getSession();
+        String id = request.getParameter("id");
+        ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
+        for (int i = 0; i < listCart.size(); i++) {
+            if (listCart.get(i).getId().equals(id)) {
+                // Update quantity of Database
 
-        try (PrintWriter out = response.getWriter()) {
-            if (session.getAttribute("cartID") == null) {
-                request.getRequestDispatcher("Cart.jsp").forward(request, response);
-            }else{
-                ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
-                request.setAttribute("listCart", listCart);
-                request.getRequestDispatcher("Cart.jsp").forward(request, response);
+                // Remove item form cart
+                listCart.remove(i);
+                break;
             }
-            
-//            out.println("HEHE");
         }
+        request.getRequestDispatcher("ShowCart").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

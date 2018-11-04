@@ -16,7 +16,7 @@
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
                         <li><a href="Register.jsp">Đăng ký</a></li>
                         <li><a href="Login.jsp">Đăng nhập</a></li>
-                        <li><a href="LogoutAccount" onclick="alert('Đăng xuất thành công')">Đăng xuất</a></li>
+                        <li><a href="LogoutAccount" onclick="alert('Bạn có muốn đăng xuất')">Đăng xuất</a></li>
                         <li><a href="ShowCart">Giỏ hàng</a></li>
                     </ul>
                 </div>

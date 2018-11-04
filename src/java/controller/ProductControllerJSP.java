@@ -143,8 +143,7 @@ public class ProductControllerJSP extends HttpServlet {
                         break;
                     }
                 }
-                RequestDispatcher dispatch = request.getRequestDispatcher("/remove.jsp");
-                dispatch.forward(request, response);
+                request.getRequestDispatcher("ProductControllerJSP?service=showCart").forward(request, response);
             }
             if (service.equalsIgnoreCase("checkout")) {
                 ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");

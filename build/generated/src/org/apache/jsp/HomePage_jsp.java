@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.sql.ResultSet;
 import model.DAOHangSanXuat;
 import model.DBConnection;
+import model.DBConnection;
+import java.sql.ResultSet;
 
 public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -60,11 +62,13 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>FoodShop</title>\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <!-- Boostrap 3.3.7 CSS -->\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"asset/css/bootstrap.min.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"asset/css/bootstrap.css\">\r\n");
@@ -100,8 +104,8 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <ul class=\"nav navbar-nav navbar-right hidden-xs hidden-sm\">\r\n");
       out.write("                        <li><a href=\"Register.jsp\">Đăng ký</a></li>\r\n");
       out.write("                        <li><a href=\"Login.jsp\">Đăng nhập</a></li>\r\n");
-      out.write("                        <li><a href=\"checkout.jsp\" onclick=\"alert('Check out successfull')\">Đăng xuất</a></li>\r\n");
-      out.write("                        <li><a href=\"Cart.jsp\">Giỏ hàng</a></li>\r\n");
+      out.write("                        <li><a href=\"LogoutAccount\" onclick=\"alert('Bạn có muốn đăng xuất')\">Đăng xuất</a></li>\r\n");
+      out.write("                        <li><a href=\"ShowCart\">Giỏ hàng</a></li>\r\n");
       out.write("                    </ul>\r\n");
       out.write("                </div>\r\n");
       out.write("            </nav>\r\n");
@@ -111,7 +115,7 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <!-- Logo -->\r\n");
       out.write("        <div class=\"row\">\r\n");
       out.write("            <div class=\"logo\">\r\n");
-      out.write("                <img src=\"images/logo_03.gif\" alt=\"Logo\">\r\n");
+      out.write("                <a href=\"HomePage.jsp\"><img src=\"images/logo_03.gif\" alt=\"Logo\"></a>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("             <nav class=\"navbar hidden-xs hidden-sm\">\r\n");
@@ -233,6 +237,11 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+
+    DBConnection dbconnMenu = new DBConnection();
+    String sqlMenu = "Select * from HangSanXuat where status=1";
+    ResultSet rsMenu = dbconnMenu.getData(sqlMenu);
+
       out.write("\r\n");
       out.write("<div class=\"menu\">\r\n");
       out.write("    <div class=\"danh-muc-sp\">\r\n");
@@ -243,10 +252,9 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <ul> \r\n");
       out.write("                ");
 
-//                    while(rs.next()){
-//                        out.println(" <li><a href=\"#\">"+rs.getString(2)+"</a></li>");
-//                    }
-                    
+                    while(rsMenu.next()){
+                        out.println(" <li><a href=\"#\">"+rsMenu.getString(2)+"</a></li>");
+                    }
                 
       out.write("\r\n");
       out.write("            </ul>\r\n");
@@ -261,6 +269,14 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+
+    DBConnection dbconnContent = new DBConnection();
+    String query = "Select sid,sname,quantity,price,picture,description from SanPham";
+    ResultSet rsContent = dbconnContent.getData(query);
+
+      out.write("\r\n");
       out.write("<div class=\"main-content\">\r\n");
       out.write("    <!-- Sản phẩm nổi bật -->\r\n");
       out.write("    <div class=\"sp-noi-bat\">\r\n");
@@ -269,75 +285,25 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("        <div class=\"products\">\r\n");
       out.write("            <div class=\"row\">\r\n");
-      out.write("                <div class=\"col-md-4\">\r\n");
-      out.write("                    <div class=\"products-img\">\r\n");
-      out.write("                        <img src=\"images/products/sp1_03.png\" alt=\"\">\r\n");
-      out.write("                        <div class=\"add-to-cart\">\r\n");
-      out.write("                            <a href=\"#\" class=\"btn btn-warning\" role=\"button\">Thêm vào giỏ hàng</a>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"mo-ta-sp\">\r\n");
-      out.write("                        <p>245.000 Đ</p>\r\n");
-      out.write("                        <a href=\"#\"><h3>Bánh Nướng Augosuti Alena</h3></a>\r\n");
-      out.write("                        <p>Thêm phần mô tả</p>\r\n");
+      out.write("              ");
+
+                  while(rsContent.next()){
+                      out.println("<div class=\"col-md-4\">");
+                      out.println("  <div class=\"products-img\">");
+                      out.println("    <img src=\"images/products/"+ rsContent.getString(5) +"\" style=\"width: 253px;height: 252px;\" >");
+                      out.println("    <div class=\"add-to-cart\">");
+                      out.println("       <a href=\"AddToCart?id="+rsContent.getString(1)+"\" class=\"btn btn-warning\" role=\"button\" onclick=\"alert('Thêm thành công')\" >Thêm vào giỏ hàng</a>");
+                      out.println("    </div>");
+                      out.println("  </div>");
+                      out.println("  <div class=\"mo-ta-sp\">");
+                      out.println("    <p>"+rsContent.getString(4)+" $</p>");
+                      out.println("    <a href=\"#\"><h3>"+rsContent.getString(2)+"</h3></a>");
+                      out.println("    <p>"+rsContent.getString(6)+"</p>");
+                      out.println("  </div>");
+                      out.println(" </div>");
+                  }
+              
       out.write("\r\n");
-      out.write("                    </div>  \r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"col-md-4\">\r\n");
-      out.write("                    <div class=\"products-img\">\r\n");
-      out.write("                        <img src=\"images/products/sp1_03.png\" alt=\"\">\r\n");
-      out.write("                        <div class=\"add-to-cart\">\r\n");
-      out.write("                            <a href=\"#\" class=\"btn btn-warning\" role=\"button\">Thêm vào giỏ hàng</a>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"mo-ta-sp\">\r\n");
-      out.write("                        <p>245.000 Đ</p>\r\n");
-      out.write("                        <a href=\"#\"><h3>Bánh Nướng Augosuti Alena</h3></a>\r\n");
-      out.write("                        <p>Thêm phần mô tả</p>\r\n");
-      out.write("                    </div>  \r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"col-md-4\">\r\n");
-      out.write("                    <div class=\"products-img\">\r\n");
-      out.write("                        <img src=\"images/products/sp1_03.png\" alt=\"\">\r\n");
-      out.write("                        <div class=\"add-to-cart\">\r\n");
-      out.write("                            <a href=\"#\" class=\"btn btn-warning\" role=\"button\">Thêm vào giỏ hàng</a>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"mo-ta-sp\">\r\n");
-      out.write("                        <p>245.000 Đ</p>\r\n");
-      out.write("                        <a href=\"#\"><h3>Bánh Nướng Augosuti Alena</h3></a>\r\n");
-      out.write("                        <p>Thêm phần mô tả</p>\r\n");
-      out.write("\r\n");
-      out.write("                    </div>  \r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"col-md-4\">\r\n");
-      out.write("                    <div class=\"products-img\">\r\n");
-      out.write("                        <img src=\"images/products/sp1_03.png\" alt=\"\">\r\n");
-      out.write("                        <div class=\"add-to-cart\">\r\n");
-      out.write("                            <a href=\"#\" class=\"btn btn-warning\" role=\"button\">Thêm vào giỏ hàng</a>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"mo-ta-sp\">\r\n");
-      out.write("                        <p>245.000 Đ</p>\r\n");
-      out.write("                        <a href=\"#\"><h3>Bánh Nướng Augosuti Alena</h3></a>\r\n");
-      out.write("                        <p>Thêm phần mô tả</p>\r\n");
-      out.write("\r\n");
-      out.write("                    </div>  \r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"col-md-4\">\r\n");
-      out.write("                    <div class=\"products-img\">\r\n");
-      out.write("                        <img src=\"images/products/sp1_03.png\" alt=\"\">\r\n");
-      out.write("                        <div class=\"add-to-cart\">\r\n");
-      out.write("                            <a href=\"#\" class=\"btn btn-warning\" role=\"button\">Thêm vào giỏ hàng</a>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"mo-ta-sp\">\r\n");
-      out.write("                        <p>245.000 Đ</p>\r\n");
-      out.write("                        <a href=\"#\"><h3>Bánh Nướng Augosuti Alena</h3></a>\r\n");
-      out.write("                        <p>Thêm phần mô tả</p>\r\n");
-      out.write("\r\n");
-      out.write("                    </div>  \r\n");
-      out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("    </div>\r\n");

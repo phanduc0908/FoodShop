@@ -18,6 +18,6 @@
         <title>Add To Cart</title>
     </head>
     <body>
-        <h2><a href="ProductControllerJSP?service=showCart">Show Shopping Cart</h2>
+        <h2><a href="Cart.jsp">Show Shopping Cart</h2>
     </body>
 </html>

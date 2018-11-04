@@ -46,54 +46,55 @@ public class AddToCart extends HttpServlet {
             HttpSession session = request.getSession();
             
             String id = request.getParameter("id"); // id - key
-            // check session is exist in
-            String sql = "Select sid,sname,price,quantity from SanPham where sid = '" + id + "'";
-            ResultSet rs = dbconn.getData(sql);
-            
-            Cart cart = new Cart();
-            int currentQuantity = 0;
-            if (rs.next()) {
-                cart.setId(rs.getString(1));
-                cart.setName(rs.getString(2));
-                cart.setPrice(Double.parseDouble(rs.getString(3)));
-                cart.setQuantity(1);
-                currentQuantity = rs.getInt(4);
-            }
-            if (session.getAttribute("cartID") == null) {
-                ArrayList<Cart> listCart = new ArrayList<Cart>();
-                listCart.add(cart);
-                session.setAttribute("cartID", listCart);
-                
-                int curr = dao.getCurrentQuantity(id);
-                dao.UpdateQuantity(curr - 1, id);
-            } else {
-                boolean isExist = false;
-                ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
-                for (int i = 0; i < listCart.size(); i++) {
-                    if (listCart.get(i).getId().equals(id)) {
-                        isExist = true;
-                        break;
-                    }
+                // check session is exist in
+                String sql = "Select sid,sname,price,quantity from SanPham where sid = '" + id + "'";
+                ResultSet rs = dbconn.getData(sql);
+
+                Cart cart = new Cart();
+                int currentQuantity = 0;
+                if (rs.next()) {
+                    cart.setId(rs.getString(1));
+                    cart.setName(rs.getString(2));
+                    cart.setPrice(Double.parseDouble(rs.getString(3)));
+                    cart.setQuantity(1);
+                    currentQuantity = rs.getInt(4);
                 }
-                if (isExist == true) {
+                if (session.getAttribute("cartID") == null) {
+                    ArrayList<Cart> listCart = new ArrayList<Cart>();
+                    listCart.add(cart);
+                    session.setAttribute("cartID", listCart);
+
+                    int curr = dao.getCurrentQuantity(id);
+                    dao.UpdateQuantity(curr - 1, id);
+                } else {
+                    boolean isExist = false;
+                    ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
                     for (int i = 0; i < listCart.size(); i++) {
                         if (listCart.get(i).getId().equals(id)) {
-                            int updateQuantity = listCart.get(i).getQuantity();
-                            // Reset quantity of Cart List
-                            listCart.get(i).setQuantity(updateQuantity + 1);
-                            
-                            // Update quantity in Database
-                            dao.UpdateQuantity(currentQuantity - 1, id);
+                            isExist = true;
                             break;
                         }
                     }
-                } else {
-                    listCart.add(cart);
-                    dao.UpdateQuantity(currentQuantity - 1, id);
+                    if (isExist == true) {
+                        for (int i = 0; i < listCart.size(); i++) {
+                            if (listCart.get(i).getId().equals(id)) {
+                                int updateQuantity = listCart.get(i).getQuantity();
+                                // Reset quantity of Cart List
+                                listCart.get(i).setQuantity(updateQuantity + 1);
+
+                                // Update quantity in Database
+                                dao.UpdateQuantity(currentQuantity - 1, id);
+                                break;
+                            }
+                        }
+                    } else {
+                        listCart.add(cart);
+                        dao.UpdateQuantity(currentQuantity - 1, id);
+                    }
                 }
-            }
-            RequestDispatcher dispatch = request.getRequestDispatcher("/HomePage.jsp");
-            dispatch.forward(request, response);
+
+                RequestDispatcher dispatch = request.getRequestDispatcher("HomePage.jsp");
+                dispatch.forward(request, response);            
         } catch (Exception ex) {
             Logger.getLogger(AddToCart.class.getName()).log(Level.SEVERE, null, ex);
         }

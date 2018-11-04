@@ -19,7 +19,7 @@ import model.Cart;
  *
  * @author Phan Van Duc
  */
-public class ShowCart extends HttpServlet {
+public class Update extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,19 +33,16 @@ public class ShowCart extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        HttpSession session = request.getSession();
-
         try (PrintWriter out = response.getWriter()) {
-            if (session.getAttribute("cartID") == null) {
-                request.getRequestDispatcher("Cart.jsp").forward(request, response);
-            }else{
-                ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
-                request.setAttribute("listCart", listCart);
-                request.getRequestDispatcher("Cart.jsp").forward(request, response);
+            /* TODO output your page here. You may use following sample code. */
+            HttpSession session = request.getSession();
+            ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
+            String[] quantity = request.getParameterValues("quantity");
+            for (int i = 0; i < listCart.size(); i++) {
+                listCart.get(i).setQuantity(Integer.parseInt(quantity[i]));
             }
-            
-//            out.println("HEHE");
+            session.setAttribute("cartID", listCart);
+            request.getRequestDispatcher("ShowCart").forward(request, response);
         }
     }
 

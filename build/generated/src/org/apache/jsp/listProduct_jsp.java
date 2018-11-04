@@ -42,41 +42,41 @@ public final class listProduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>List product</title>\n");
-      out.write("        <style>\n");
-      out.write("            img{\n");
-      out.write("                height: 100px;\n");
-      out.write("                width: 100px;\n");
-      out.write("            }\n");
-      out.write("        </style>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>List product</title>\r\n");
+      out.write("        <style>\r\n");
+      out.write("            img{\r\n");
+      out.write("                height: 100px;\r\n");
+      out.write("                width: 100px;\r\n");
+      out.write("            }\r\n");
+      out.write("        </style>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
       out.write("        ");
 
             ResultSet rs = (ResultSet)request.getAttribute("rs");
         
-      out.write("\n");
-      out.write("        <table border=\"1\">\n");
-      out.write("            <thead>\n");
-      out.write("                <tr>\n");
-      out.write("                    <th>SID</th>\n");
-      out.write("                    <th>Name</th>\n");
-      out.write("                    <th>Quantity</th>\n");
-      out.write("                    <th>Price</th>\n");
-      out.write("                    <th>Picture</th>\n");
-      out.write("                    <th>Description</th>\n");
-      out.write("                </tr>\n");
-      out.write("            </thead>\n");
-      out.write("            <tbody>\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("        <table border=\"1\">\r\n");
+      out.write("            <thead>\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <th>SID</th>\r\n");
+      out.write("                    <th>Name</th>\r\n");
+      out.write("                    <th>Quantity</th>\r\n");
+      out.write("                    <th>Price</th>\r\n");
+      out.write("                    <th>Picture</th>\r\n");
+      out.write("                    <th>Description</th>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("            </thead>\r\n");
+      out.write("            <tbody>\r\n");
+      out.write("\r\n");
       out.write("                ");
 
                     while (rs.next()) {
@@ -91,11 +91,11 @@ public final class listProduct_jsp extends org.apache.jasper.runtime.HttpJspBase
                         out.println("</tr>");
                     }
                 
-      out.write("\n");
-      out.write("            </tbody>\n");
-      out.write("        </table>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("            </tbody>\r\n");
+      out.write("        </table>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

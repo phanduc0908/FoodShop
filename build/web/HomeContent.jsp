@@ -26,7 +26,7 @@
                       out.println("  <div class=\"products-img\">");
                       out.println("    <img src=\"images/products/"+ rsContent.getString(5) +"\" style=\"width: 253px;height: 252px;\" >");
                       out.println("    <div class=\"add-to-cart\">");
-                      out.println("       <a href=\"ProductControllerJSP?service=addToCart&id="+rsContent.getString(1)+"\" class=\"btn btn-warning\" role=\"button\" onclick=\"alert('Thêm thành công')\" >Thêm vào giỏ hàng</a>");
+                      out.println("       <a href=\"AddToCart?id="+rsContent.getString(1)+"\" class=\"btn btn-warning\" role=\"button\" onclick=\"alert('Thêm thành công')\" >Thêm vào giỏ hàng</a>");
                       out.println("    </div>");
                       out.println("  </div>");
                       out.println("  <div class=\"mo-ta-sp\">");
