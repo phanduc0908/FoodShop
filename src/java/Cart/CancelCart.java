@@ -6,19 +6,19 @@
 package Cart;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Cart;
 
 /**
  *
  * @author Phan Van Duc
  */
-public class Remove extends HttpServlet {
+public class CancelCart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,18 +32,11 @@ public class Remove extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        HttpSession session = request.getSession();
-        String id = request.getParameter("id");
-        ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
-        for (int i = 0; i < listCart.size(); i++) {
-            if (listCart.get(i).getId().equals(id)) {
-                // Remove item form cart
-                listCart.remove(i);
-                break;
-            }
+        try (PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession();
+            session.setAttribute("cartID", null);
+            request.getRequestDispatcher("ShowCart").forward(request, response);
         }
-        request.getRequestDispatcher("ShowCart").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

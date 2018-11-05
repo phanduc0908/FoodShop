@@ -11,6 +11,8 @@
     ArrayList<Cart> list = null;
     if(session.getAttribute("cartID") != null){
         list = (ArrayList)request.getAttribute("listCart");
+    }else{
+        list = new ArrayList<Cart>();
     }
     
 %>
@@ -36,7 +38,8 @@
             </thead>
             <form action="Update" method="POST">
                 <tbody>
-                    <%                    double totalPrice = 0;
+                    <%                    
+                        double totalPrice = 0;
                         double total = 0;
                         for (Cart c : list) {
                             out.println("<tr>");
@@ -59,7 +62,7 @@
                                     <button type="submit" class="btn btn-warning">Cập nhật đơn hàng</button>
                                 </div>
                                 <div class="col-md-6 remove-back">
-                                    <a href="#" class="btn btn-danger">Hủy đơn hàng</a>
+                                    <a href="CancelCart" class="btn btn-danger">Hủy đơn hàng</a>
                                     <a href="HomePage.jsp" class="btn btn-primary">Tiếp tục mua hàng</a>
                                 </div>
                             </div>

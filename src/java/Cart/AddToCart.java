@@ -63,9 +63,6 @@ public class AddToCart extends HttpServlet {
                     ArrayList<Cart> listCart = new ArrayList<Cart>();
                     listCart.add(cart);
                     session.setAttribute("cartID", listCart);
-
-                    int curr = dao.getCurrentQuantity(id);
-                    dao.UpdateQuantity(curr - 1, id);
                 } else {
                     boolean isExist = false;
                     ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
@@ -81,15 +78,11 @@ public class AddToCart extends HttpServlet {
                                 int updateQuantity = listCart.get(i).getQuantity();
                                 // Reset quantity of Cart List
                                 listCart.get(i).setQuantity(updateQuantity + 1);
-
-                                // Update quantity in Database
-                                dao.UpdateQuantity(currentQuantity - 1, id);
                                 break;
                             }
                         }
                     } else {
                         listCart.add(cart);
-                        dao.UpdateQuantity(currentQuantity - 1, id);
                     }
                 }
 
