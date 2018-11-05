@@ -109,31 +109,25 @@ public class DAOSanPham {
         return n;
     }
 
-    public int removeSanPham(int id) {
+    public int removeSanPham(String sid) {
         int n = 0;
-        String query = "Select *from SanPham as s join HoaDon as b"
-                + " on a.cid = b.cid";
-        ResultSet rs = dbConn.getData(query);
+        String query = "Delete from SanPham where sid = '" + sid + "'";
         try {
-            if (rs.next()) {
-                changeStatus(rs.getString("username"), rs.getInt("status"));
-            } else {
-                String sqlDelete = "delete from KhachHang where cid =" + id;
-                Statement st = conn.createStatement();
-                st.executeUpdate(sqlDelete);
-            }
+            Statement st = conn.createStatement();
+            n = st.executeUpdate(query);
         } catch (Exception e) {
         }
         return n;
     }
-
     public static void main(String[] args) {
         try {
             DBConnection dbCon = new DBConnection();
             DAOSanPham dao = new DAOSanPham(dbCon);
-            System.out.println(dao.AddSanPham(new SanPham("SP8", "SAd", 4, 3.4, "sdf", "sdfer", 1)));
+            System.out.println(dao.removeSanPham("sdf"));
         } catch (Exception ex) {
             Logger.getLogger(DAOSanPham.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 }
+

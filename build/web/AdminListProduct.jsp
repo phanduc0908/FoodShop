@@ -66,7 +66,7 @@
                                 out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getInt(3) + "</div>");
 
                                 out.println("<div class=\"cell\" data-title=\"ID\"><a href=\"Customer?service=preUpdate&id=" + rs.getString(1) + "\">update</a></div>");
-                                out.println("<div class=\"cell\" data-title=\"ID\"><a href=\"Customer?service=delete&id=" + rs.getString(1) + "\">Delete</a></div>");
+                                out.println("<div class=\"cell\" data-title=\"ID\"><a href=\"deleteProduct?id=" + rs.getString(1) + "\">Delete</a></div>");
                                 out.println("</div>");
                             }
                         %>
