@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                            <li><a href="#">Đăng xuất</a></li>
+                            <li><a href="AdminLogoutServelet">Đăng xuất</a></li>
                         </ul>
                     </div>
                 </nav>

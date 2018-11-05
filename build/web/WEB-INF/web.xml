@@ -72,6 +72,10 @@
         <servlet-name>AdminLoginServelet</servlet-name>
         <servlet-class>Admin.AdminLoginServelet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminLogoutServelet</servlet-name>
+        <servlet-class>Admin.AdminLogoutServelet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CustomerController</servlet-name>
         <url-pattern>/CustomerController</url-pattern>
@@ -139,6 +143,10 @@
     <servlet-mapping>
         <servlet-name>AdminLoginServelet</servlet-name>
         <url-pattern>/AdminLoginServelet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServelet</servlet-name>
+        <url-pattern>/AdminLogoutServelet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
