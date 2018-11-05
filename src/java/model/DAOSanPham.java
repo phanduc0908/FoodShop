@@ -21,38 +21,40 @@ import java.util.logging.Logger;
  * @author Phan Van Duc
  */
 public class DAOSanPham {
+
     DBConnection dbConn;
     Connection conn;
 
     public DAOSanPham(DBConnection dbConn) throws Exception {
         this.dbConn = dbConn;
-        conn= dbConn.getConnection();
+        conn = dbConn.getConnection();
     }
 
     // Get all products name
-    public ArrayList<String> listProductName(){
+    public ArrayList<String> listProductName() {
         ArrayList<String> list = new ArrayList<>();
         String query = "Select hname from HangSanXuat where status = 1";
         return list;
     }
-    
-    public int getCurrentQuantity(String sid){
-        int n =0;
-        String query ="Select * from SanPham where sid = '" + sid+"'";
+
+    public int getCurrentQuantity(String sid) {
+        int n = 0;
+        String query = "Select * from SanPham where sid = '" + sid + "'";
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 n = rs.getInt("quantity");
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAOSanPham.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return n;
     }
-    public void UpdateQuantity(int quantity, String sid){
-        String sql = "update SanPham set quantity="+quantity+" where sid='"+sid+"'";
+
+    public void UpdateQuantity(int quantity, String sid) {
+        String sql = "update SanPham set quantity=" + quantity + " where sid='" + sid + "'";
         PreparedStatement pre;
         try {
             pre = conn.prepareStatement(sql);
@@ -62,10 +64,11 @@ public class DAOSanPham {
             System.out.println(e.getMessage());
         }
     }
-    public int AddSanPham(SanPham obj){
-        int n =0;
+
+    public int AddSanPham(SanPham obj) {
+        int n = 0;
         String query = "Insert into SanPham(sid,sname, quantity,price, picture,description,hid)"
-                +" values(?,?,?,?,?,?,?)";
+                + " values(?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, obj.getSid());
@@ -77,15 +80,15 @@ public class DAOSanPham {
             ps.setInt(7, obj.getHid());
             n = ps.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return n;
     }
-    
-    public int updateSanPham(SanPham obj){
-        int n=0;
+
+    public int updateSanPham(SanPham obj) {
+        int n = 0;
         String query = "update SanPham set sname = ?, quantity = ?,price = ?,picture = ?, description = ? where sid = ?";
-        
+
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, obj.getSname());
@@ -99,27 +102,38 @@ public class DAOSanPham {
         }
         return n;
     }
-    
-    public int changeStatus(String sname, int status){
-        int n =0;
-        String query = "update SanPham set status = " +(status == 1 ? 0:1) +"where username ='"+sname+"'";
+
+    public int changeStatus(String sname, int status) {
+        int n = 0;
+        String query = "update SanPham set status = " + (status == 1 ? 0 : 1) + "where username ='" + sname + "'";
         return n;
     }
-        public int removeSanPham(int id){
-        int n =0;
+
+    public int removeSanPham(int id) {
+        int n = 0;
         String query = "Select *from SanPham as s join HoaDon as b"
-                +" on a.cid = b.cid";
+                + " on a.cid = b.cid";
         ResultSet rs = dbConn.getData(query);
         try {
-            if(rs.next()){
+            if (rs.next()) {
                 changeStatus(rs.getString("username"), rs.getInt("status"));
-            }else{
-                String sqlDelete = "delete from KhachHang where cid =" +id;
+            } else {
+                String sqlDelete = "delete from KhachHang where cid =" + id;
                 Statement st = conn.createStatement();
                 st.executeUpdate(sqlDelete);
             }
         } catch (Exception e) {
         }
         return n;
+    }
+
+    public static void main(String[] args) {
+        try {
+            DBConnection dbCon = new DBConnection();
+            DAOSanPham dao = new DAOSanPham(dbCon);
+            System.out.println(dao.AddSanPham(new SanPham("SP8", "SAd", 4, 3.4, "sdf", "sdfer", 1)));
+        } catch (Exception ex) {
+            Logger.getLogger(DAOSanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

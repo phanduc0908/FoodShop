@@ -74,7 +74,7 @@ public class AddProduct extends HttpServlet {
                 + "                        </div>\n"
                 + "\n"
                 + "                        <div class=\"wrap-input2 validate-input\" data-validate = \"Quantity is required\">\n"
-                + "                            <input class=\"input2\" type=\"text\" name=\"quanity\" required>\n"
+                + "                            <input class=\"input2\" type=\"text\" name=\"quantity\" required>\n"
                 + "                            <span class=\"focus-input2\" data-placeholder=\"QUANTITY\"></span>\n"
                 + "                        </div>\n"
                 + "\n"

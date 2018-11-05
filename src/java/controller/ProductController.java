@@ -50,20 +50,10 @@ public class ProductController extends HttpServlet {
                 SanPham sp = new SanPham(sid, sname, quantity, price, picture, description, HangSX);
                 int n = dao.AddSanPham(sp);
                 if(n > 0){
-                    out.println("inserted");
+                    request.getRequestDispatcher("ListAllProduct").forward(request, response);
                 }else{
                     out.println("error");
                 }
-                /* TODO output your page here. You may use following sample code. */
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet ProductController</title>");
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>Servlet ProductController at " + request.getContextPath() + "</h1>");
-                out.println("</body>");
-                out.println("</html>");
             }
         } catch (Exception ex) {
             Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
