@@ -157,13 +157,4 @@ public class DAOKhachHang {
         return "";
     }
 
-    public static void main(String[] args) {
-        DBConnection dbcon = new DBConnection();
-        //KhachHang kh = new KhachHang("Ngo Hai Anh", "Nam Dinh", "0983654187", "anhnhse", "123654");
-        DAOKhachHang dao = new DAOKhachHang(dbcon);
-        //dao.addKhachHang(kh);
-        System.out.println(dao.login("haihn", "hai123"));
-        System.out.println(dao.isDuplicateUser("anhnth"));
-        System.out.println(dao.getFullname("anhnth"));
-    }
 }
