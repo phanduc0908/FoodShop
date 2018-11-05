@@ -23,19 +23,18 @@
         <div class="container">
             <div class="panel panel-default form-container">
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" action="AdminLoginServelet" method="POST">
                         <h3 class="text-center margin-xl-bottom">Welcome Back!</h3>
-
+                        <h4 style="color: red">${errorLoginAdmin}</h4>
                         <div class="form-group text-center">
                             <label class="sr-only" for="email">Username</label>
-                            <input type="email" class="form-control input-lg" id="email" placeholder="Username">
+                            <input type="text" class="form-control input-lg" id="username" name="username" placeholder="Username">
                         </div>
                         <div class="form-group text-center">
                             <label class="sr-only" for="password">Password</label>
-                            <input type="password" class="form-control input-lg" id="password" placeholder="Password">
+                            <input type="password" class="form-control input-lg" id="password" name="password" placeholder="Password">
                         </div>
-
-                        <a href="index.html" class="btn btn-primary btn-block btn-lg">SIGN IN</a>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">SIGIN</button>
                     </form>
                 </div>
             </div>

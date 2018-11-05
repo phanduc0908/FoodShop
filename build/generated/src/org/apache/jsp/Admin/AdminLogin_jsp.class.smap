@@ -4,7 +4,7 @@ JSP
 *S JSP
 *F
 + 0 AdminLogin.jsp
-AdminLogin.jsp
+Admin/AdminLogin.jsp
 *L
 5,23:44
 28:67,3

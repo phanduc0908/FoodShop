@@ -1,4 +1,4 @@
-package org.apache.jsp;
+package org.apache.jsp.Admin;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -52,10 +52,10 @@ public final class AdminLogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Veneto Admin &middot; Sign In </title>\n");
       out.write("        <meta name=\"description\" content=\"\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"asset/css/bootstrap.css\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"asset/css/bootstrap.min.css\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"dist/Admin/veneto-admin.min.css\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"dist/Admin/demo.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../asset/css/bootstrap.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../asset/css/bootstrap.min.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../dist/Admin/veneto-admin.min.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../dist/Admin/demo.css\">\n");
       out.write("\n");
       out.write("    </head>\n");
       out.write("    <body class=\"body-sign-in\">\n");
@@ -73,7 +73,7 @@ public final class AdminLogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        </div>\n");
       out.write("                        <div class=\"form-group text-center\">\n");
       out.write("                            <label class=\"sr-only\" for=\"password\">Password</label>\n");
-      out.write("                            <input type=\"password\" class=\"form-control input-lg\" id=\"password\" name=\"password\" placeholder=\"Password\">\n");
+      out.write("                            <input type=\"password\" class=\"form-control input-lg\" id=\"password\" placeholder=\"Password\">\n");
       out.write("                        </div>\n");
       out.write("                        <button type=\"submit\" class=\"btn btn-primary btn-block btn-lg\">SIGIN</button>\n");
       out.write("                    </form>\n");
