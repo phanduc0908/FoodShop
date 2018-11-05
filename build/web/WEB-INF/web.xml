@@ -88,6 +88,10 @@
         <servlet-name>preUpdateCustomer</servlet-name>
         <servlet-class>Admin.preUpdateCustomer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListAllProduct</servlet-name>
+        <servlet-class>Admin.ListAllProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CustomerController</servlet-name>
         <url-pattern>/CustomerController</url-pattern>
@@ -171,6 +175,10 @@
     <servlet-mapping>
         <servlet-name>preUpdateCustomer</servlet-name>
         <url-pattern>/preUpdateCustomer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListAllProduct</servlet-name>
+        <url-pattern>/ListAllProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -8,8 +8,6 @@ package Admin;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +18,7 @@ import model.DBConnection;
  *
  * @author Phan Van Duc
  */
-public class ListAllCustomer extends HttpServlet {
+public class ListAllProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +31,14 @@ public class ListAllCustomer extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            response.setContentType("text/html;charset=UTF-8");
-            
-            DBConnection dbCon = new DBConnection();
-            String query = "select * from KhachHang";
-            
-            ResultSet rs = dbCon.getData(query);
-            request.setAttribute("listCustomer", rs);
-            
-            request.getRequestDispatcher("Customers.jsp").forward(request, response);
-            
-        } catch (Exception ex) {
-            Logger.getLogger(ListAllCustomer.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        response.setContentType("text/html;charset=UTF-8");
+
+        DBConnection dbCon = new DBConnection();
+        String query = "Select * from SanPham";
+        ResultSet rs = dbCon.getData(query);
+        
+        request.setAttribute("listProduct", rs);
+        request.getRequestDispatcher("AdminListProduct.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

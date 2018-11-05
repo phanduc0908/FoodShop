@@ -1,9 +1,10 @@
 <%-- 
-    Document   : Customers
-    Created on : Nov 5, 2018, 8:24:02 PM
+    Document   : AdminListProduct
+    Created on : Nov 5, 2018, 11:00:58 PM
     Author     : Phan Van Duc
 --%>
 
+<%@page import="model.DBConnection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,25 +26,26 @@
     </head>
     <body>
         <%
-            ResultSet rs = (ResultSet) request.getAttribute("listCustomer");
+            ResultSet rs = (ResultSet) request.getAttribute("listProduct");
+            DBConnection dbCon = new DBConnection();
         %>
 
         <div class="limiter">
             <div class="container-table100">
                 <div class="wrap-table100">
-                    <h1>List all Customer</h1>
+                    <h1>List all Product</h1>
                     <div class="action" style="padding-bottom: 15px;">
                         <a href="AdminIndex.jsp" style="padding-right: 10px;">Quay lại</a>
                     </div>
                     <div class="table">
                         <div class="row header">
                             <div class="cell">ID</div>
-                            <div class="cell">Full Name</div>
-                            <div class="cell">Address</div>
-                            <div class="cell">Phone</div>
-                            <div class="cell">UserName</div>
-                            <div class="cell">Password</div>
-                            <div class="cell">Status</div>
+                            <div class="cell">Tên SP</div>
+                            <div class="cell">Hãng SX</div>
+                            <div class="cell">Trạng thái</div>
+                            <div class="cell">Mô tả</div>
+                            <div class="cell">Giá</div>
+                            <div class="cell">Số lượng</div>
                             <div class="cell">Update</div>
                             <div class="cell">Delete</div>
                         </div>
@@ -52,14 +54,19 @@
                                 out.println("<div class=\"row\">");
                                 out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getString(1) + "</div>");
                                 out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getString(2) + "</div>");
-                                out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getString(3) + "</div>");
-                                out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getString(4) + "</div>");
-                                out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getString(5) + "</div>");
+                                
+                                String sql = "select * from HangSanXuat where status=1 and hid =" + rs.getInt(8);
+                                ResultSet rsHSX = dbCon.getData(sql);
+                                if (rsHSX.next()) {
+                                    out.println("<div class=\"cell\" data-title=\"ID\">" + rsHSX.getString(2) + "</div>");
+                                }
+                                out.println("<div class=\"cell\" data-title=\"ID\">" + (rs.getInt(7) == 1 ? "Còn hàng" : "Hết hàng") + "</div>");
                                 out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getString(6) + "</div>");
-                                out.println("<div class=\"cell\" data-title=\"ID\">" + (rs.getInt(7) == 1 ? "Active" : "De-Active") + "</div>");
+                                out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getDouble(4) + "</div>");
+                                out.println("<div class=\"cell\" data-title=\"ID\">" + rs.getInt(3) + "</div>");
 
-                                out.println("<div class=\"cell\" data-title=\"ID\"><a href=\"Customer?service=preUpdate&id=" + rs.getInt(1) + "\">update</a></div>");
-                                out.println("<div class=\"cell\" data-title=\"ID\"><a href=\"Customer?service=delete&id=" + rs.getInt(1) + "\">Delete</a></div>");
+                                out.println("<div class=\"cell\" data-title=\"ID\"><a href=\"Customer?service=preUpdate&id=" + rs.getString(1) + "\">update</a></div>");
+                                out.println("<div class=\"cell\" data-title=\"ID\"><a href=\"Customer?service=delete&id=" + rs.getString(1) + "\">Delete</a></div>");
                                 out.println("</div>");
                             }
                         %>

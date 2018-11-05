@@ -17,6 +17,7 @@ import java.sql.Statement;
  * @author Phan Van Duc
  */
 public class DAOHangSanXuat {
+
     DBConnection dbConn;
     Connection conn;
 
@@ -24,7 +25,9 @@ public class DAOHangSanXuat {
         this.dbConn = dbConn;
         conn = dbConn.getConnection();
     }
-    public int addHangSanXuat(HangSanXuat obj){
+
+    
+    public int addHangSanXuat(HangSanXuat obj) {
         int n = 0;
         String query = "insert into HangSanXuat (hname, website)"
                 + " values(?,?)";
@@ -38,7 +41,8 @@ public class DAOHangSanXuat {
         }
         return n;
     }
-    public int updateHangSanXuat(HangSanXuat obj){
+
+    public int updateHangSanXuat(HangSanXuat obj) {
         int n = 0;
         String query = "update HangSanXuat set hname = ?, website = ?, status = ?";
         PreparedStatement ps;
@@ -52,21 +56,23 @@ public class DAOHangSanXuat {
         }
         return n;
     }
-    public int changeStatus(String hname, int status){
-        int  n =0;
-        String query = "update HangSanXuat set status = " + (status == 1 ? 0: 1) + " where hname = " + hname;
+
+    public int changeStatus(String hname, int status) {
+        int n = 0;
+        String query = "update HangSanXuat set status = " + (status == 1 ? 0 : 1) + " where hname = " + hname;
         return n;
     }
-    public int removeHangSanXuat(int id){
-        int n =0;
+
+    public int removeHangSanXuat(int id) {
+        int n = 0;
         String query = "Select *from HangSanXuat as s join Sanpham as b"
-                +" on a.hid = b.sid";
+                + " on a.hid = b.sid";
         ResultSet rs = dbConn.getData(query);
         try {
-            if(rs.next()){
+            if (rs.next()) {
                 changeStatus(rs.getString("hname"), rs.getInt("status"));
-            }else{
-                String sqlDelete = "delete from HangSanXuat where hid =" +id;
+            } else {
+                String sqlDelete = "delete from HangSanXuat where hid =" + id;
                 Statement st = conn.createStatement();
                 st.executeUpdate(sqlDelete);
             }

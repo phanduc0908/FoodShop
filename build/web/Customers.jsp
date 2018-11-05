@@ -25,7 +25,7 @@
     </head>
     <body>
         <%
-            ResultSet rs = (ResultSet) request.getAttribute("rs");
+            ResultSet rs = (ResultSet) request.getAttribute("listCustomer");
         %>
 
         <div class="limiter">
