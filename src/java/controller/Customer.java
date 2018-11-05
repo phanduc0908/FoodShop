@@ -146,8 +146,8 @@ public class Customer extends HttpServlet {
             if(service.equals("delete")){
                 int id = Integer.parseInt(request.getParameter("id"));
                 int n = dao.removeKhachHang(id);
-                System.out.println(id);
-                response.sendRedirect("Customer?service=listAll");
+                request.getRequestDispatcher("ListAllCustomer").forward(request, response);
+
             }
             
             // PreUpdate
@@ -249,20 +249,8 @@ public class Customer extends HttpServlet {
                 int status=Integer.parseInt(request.getParameter("status"));
                 KhachHang kh=new KhachHang(id, name, address, phone, user, pass, status);
                 int n=dao.updateInforKhachHang(kh);
-                System.out.println(n);
-                response.sendRedirect("Customer?service=listAll");
+                request.getRequestDispatcher("ListAllCustomer").forward(request, response);
             }
-
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Customer</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Customer at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 

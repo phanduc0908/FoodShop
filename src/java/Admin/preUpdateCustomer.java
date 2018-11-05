@@ -3,27 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Cart;
+package Admin;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Cart;
-import model.DAOSanPham;
 import model.DBConnection;
 
 /**
  *
  * @author Phan Van Duc
  */
-public class CheckoutCart extends HttpServlet {
+public class preUpdateCustomer extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,43 +31,15 @@ public class CheckoutCart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            response.setContentType("text/html;charset=UTF-8");
-            
-            HttpSession session = request.getSession();
-            DBConnection dbCon = new DBConnection();
-            DAOSanPham daoSP = new DAOSanPham(dbCon);
-            
-            ArrayList<Cart> listCart = (ArrayList<Cart>) session.getAttribute("cartID");
+        response.setContentType("text/html;charset=UTF-8");
 
-            // Check website is logined, else redirect to Login page
-            if(session.getAttribute("username") == null){
-                response.sendRedirect("Login.jsp");
-            }else{
-                int leng = listCart.size();
-                for (int i = 0; i < leng; i++) {
-                    // get sid of SanPham
-                    String sid = listCart.get(i).getId();
-                    // get current quantity of products in DB
-                    int current = daoSP.getCurrentQuantity(sid);
-                    // get quantity products in Cart
-                    int quanityCart = listCart.get(i).getQuantity();
-                    // Quantity change
-                    int quantityChange = current - quanityCart;
-                    // Update changing quantity to DB
-                    daoSP.UpdateQuantity(quantityChange, sid);
-                    
-                    // Update to Bill table
-                    
-                }
-                session.setAttribute("cartID", null);
-                response.sendRedirect("HomePage.jsp");
-            }
-            
-            
-        } catch (Exception ex) {
-            Logger.getLogger(CheckoutCart.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        DBConnection dbCon = new DBConnection();
+        int id = Integer.parseInt(request.getParameter("id"));
+        String sql = "select * from KhachHang where cid=" + id;
+        ResultSet rs = dbCon.getData(sql);
+        
+        request.setAttribute("rs", rs);
+        request.getRequestDispatcher("AdminPreUpdate.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

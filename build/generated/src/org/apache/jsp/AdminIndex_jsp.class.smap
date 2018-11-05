@@ -5,8 +5,16 @@ JSP
 *F
 + 0 AdminIndex.jsp
 AdminIndex.jsp
++ 1 AdminNavbar.jsp
+AdminNavbar.jsp
++ 2 AdminLeftMenu.jsp
+AdminLeftMenu.jsp
 *L
-5,27:44
-32:71,3
-33,38:74
+5,23:50
+5#1,8:73
+13:81,3
+14,11:84
+27#0,7:94
+5#2,13:101
+33#0,13:114
 *E

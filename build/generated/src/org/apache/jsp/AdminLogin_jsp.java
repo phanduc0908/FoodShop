@@ -49,7 +49,7 @@ public final class AdminLogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta charset=\"utf-8\">\n");
       out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n");
-      out.write("        <title>Veneto Admin &middot; Sign In </title>\n");
+      out.write("        <title>Admin</title>\n");
       out.write("        <meta name=\"description\" content=\"\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"asset/css/bootstrap.css\">\n");

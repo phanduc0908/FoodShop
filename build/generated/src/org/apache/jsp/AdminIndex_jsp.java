@@ -11,6 +11,12 @@ public final class AdminIndex_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/AdminNavbar.jsp");
+    _jspx_dependants.add("/AdminLeftMenu.jsp");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -63,45 +69,54 @@ public final class AdminIndex_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("<!-- Header -->\n");
-      out.write("    <header>\n");
-      out.write("        <div class=\"row top-header\">\n");
-      out.write("            <div class=\"container\">\n");
-      out.write("                <nav class=\"navbar hidden-sm hidden-xs\">\n");
-      out.write("                    <div class=\"col-md-7\" id=\"head\">\n");
-      out.write("                        Chào mừng đến trang quản trị FoodShop <span style=\"color: red\">");
+      out.write("    ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<header>\n");
+      out.write("    <div class=\"row top-header\">\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("            <nav class=\"navbar hidden-sm hidden-xs\">\n");
+      out.write("                <div class=\"col-md-7\" id=\"head\">\n");
+      out.write("                    Chào mừng đến trang quản trị FoodShop <span style=\"color: red\">");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${username}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <div class=\"col-md-5\">\n");
-      out.write("                        <ul class=\"nav navbar-nav navbar-right hidden-xs hidden-sm\">\n");
-      out.write("                            <li><a href=\"AdminLogoutServelet\">Đăng xuất</a></li>\n");
-      out.write("                        </ul>\n");
-      out.write("                    </div>\n");
-      out.write("                </nav>\n");
-      out.write("            </div>  \n");
-      out.write("        </div>\n");
-      out.write("    </header>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"col-md-5\">\n");
+      out.write("                    <ul class=\"nav navbar-nav navbar-right hidden-xs hidden-sm\">\n");
+      out.write("                        <li><a href=\"AdminLogoutServelet\">Đăng xuất</a></li>\n");
+      out.write("                    </ul>\n");
+      out.write("                </div>\n");
+      out.write("            </nav>\n");
+      out.write("        </div>  \n");
+      out.write("    </div>\n");
+      out.write("</header>\n");
+      out.write("\n");
       out.write("<!-- Slide -->\n");
       out.write("    <div class=\"container\">\n");
       out.write("        <div class=\"content\">\n");
       out.write("            <div class=\"row\">\n");
       out.write("                <div class=\"left col-md-2\">\n");
-      out.write("                    <div class=\"title\">\n");
-      out.write("                        <h3>Menu</h3>\n");
-      out.write("                    </div>\n");
-      out.write("                    <div class=\"menu\">\n");
-      out.write("                        <ul>\n");
-      out.write("                            <li><a href=\"#\">Quản lý khách hàng</a></li>\n");
-      out.write("                            <li><a href=\"#\">Quản lý sản phẩm</a></li>\n");
-      out.write("                            <li><a href=\"#\">Quản lý hóa đơn</a></li>\n");
-      out.write("                        </ul>\n");
-      out.write("                    </div>\n");
+      out.write("                    ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<div class=\"title\">\n");
+      out.write("    <h3>Menu</h3>\n");
+      out.write("</div>\n");
+      out.write("<div class=\"menu\">\n");
+      out.write("    <ul>\n");
+      out.write("        <li><a href=\"#\">Quản lý khách hàng</a></li>\n");
+      out.write("        <li><a href=\"#\">Quản lý sản phẩm</a></li>\n");
+      out.write("        <li><a href=\"#\">Quản lý hóa đơn</a></li>\n");
+      out.write("    </ul>\n");
+      out.write("</div>");
+      out.write("\n");
       out.write("                </div>\n");
       out.write("                <div class=\"right col-md-8\">\n");
       out.write("                    <h3>Right Content</h3>\n");
       out.write("                    <p>Đăng ký tài khoản để mua hàng nhanh hơn. Theo dõi đơn đặt hàng, vận chuyển. \n");
       out.write("                        Cập nhật các tin tức sự kiện và các chương trình giảm giá của chúng tôi.</p>\n");
-      out.write("                    \n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
