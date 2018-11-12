@@ -73,6 +73,6 @@
             
         </table>
         <h4>Tổng tiền: <%=(double)Math.round(total*100)/100%> $</h4>
-        <a href="CheckoutCart" class="btn btn-warning">Thanh toán</a>
+        <a href="CheckoutCart" class="btn btn-warning"  onclick="alert('Thanh toán thành công!!!')" >Thanh toán</a>
     </div>
 </div>

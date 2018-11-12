@@ -19,6 +19,6 @@
     <body>
         <h1>Check out!</h1>
 
-        <h2><a href="ProductControllerJSP">Back to List</a></h2>
+        <h2><a href="ProductControllerJSP" onclick="alert('Thanh toán thành công!!')>Back to List</a></h2>
     </body>
 </html>
