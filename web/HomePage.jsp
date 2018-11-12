@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Sep 27, 2018, 10:22:55 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

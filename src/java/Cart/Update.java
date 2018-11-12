@@ -17,7 +17,7 @@ import model.Cart;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class Update extends HttpServlet {
 

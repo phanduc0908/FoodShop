@@ -1,7 +1,7 @@
 <%-- 
     Document   : Customers
     Created on : Nov 5, 2018, 8:24:02 PM
-    Author     : Phan Van Duc
+    Author     : NhatTQ
 --%>
 
 <%@page import="java.sql.ResultSet"%>

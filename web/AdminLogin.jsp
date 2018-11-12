@@ -1,7 +1,7 @@
 <%-- 
     Document   : AdminLogin
     Created on : Nov 5, 2018, 3:20:15 PM
-    Author     : Phan Van Duc
+    Author     : NhatTQ
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

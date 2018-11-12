@@ -1,7 +1,7 @@
 <%-- 
     Document   : HomeMenu
     Created on : Oct 30, 2018, 11:30:42 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="java.util.ArrayList"%>

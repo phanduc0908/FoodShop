@@ -1,7 +1,7 @@
 <%-- 
     Document   : Index
     Created on : Nov 5, 2018, 3:35:07 PM
-    Author     : Phan Van Duc
+    Author     : NhatTQ
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

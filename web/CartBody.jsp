@@ -1,7 +1,7 @@
 <%-- 
     Document   : CartBody
     Created on : Oct 31, 2018, 12:35:25 PM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="model.Cart"%>
@@ -52,7 +52,6 @@
                             out.println("<td>" + (double) Math.round(totalPrice * 100) / 100 + " $</td>");
                             out.println("<td><a href=\"Remove?id=" + c.getId() + "\"><i class=\"far fa-trash-alt\"></i></a></td>");
                             out.println("</tr>");
-
                         }
                     %>
                     <tr>

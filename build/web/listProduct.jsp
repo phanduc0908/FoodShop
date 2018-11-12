@@ -1,7 +1,7 @@
 <%-- 
     Document   : listProduct
     Created on : Oct 11, 2018, 9:35:05 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="java.sql.ResultSet"%>

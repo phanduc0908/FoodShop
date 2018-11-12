@@ -1,7 +1,7 @@
 <%-- 
     Document   : HomeBrand
     Created on : Oct 30, 2018, 11:34:47 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

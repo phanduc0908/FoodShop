@@ -6,7 +6,6 @@
 package Admin;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author NhatTQ
  */
 public class preUpdateCustomer extends HttpServlet {
 

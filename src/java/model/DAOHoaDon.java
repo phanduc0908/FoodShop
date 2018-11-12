@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class DAOHoaDon {
     DBConnection dbConn;

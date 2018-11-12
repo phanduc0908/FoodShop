@@ -1,7 +1,7 @@
 <%-- 
     Document   : HomeFooter
     Created on : Oct 30, 2018, 11:33:54 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

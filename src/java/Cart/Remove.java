@@ -16,7 +16,7 @@ import model.Cart;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class Remove extends HttpServlet {
 

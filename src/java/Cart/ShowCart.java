@@ -17,7 +17,7 @@ import model.Cart;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class ShowCart extends HttpServlet {
 
@@ -44,8 +44,6 @@ public class ShowCart extends HttpServlet {
                 request.setAttribute("listCart", listCart);
                 request.getRequestDispatcher("Cart.jsp").forward(request, response);
             }
-            
-//            out.println("HEHE");
         }
     }
 

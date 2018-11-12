@@ -1,7 +1,7 @@
 <%-- 
     Document   : HomeContent
     Created on : Oct 30, 2018, 11:31:31 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="model.DBConnection"%>

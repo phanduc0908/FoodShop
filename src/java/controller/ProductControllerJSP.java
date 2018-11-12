@@ -5,7 +5,6 @@
  */
 package controller;
 
-import com.sun.java.swing.plaf.windows.resources.windows;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -24,7 +23,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class ProductControllerJSP extends HttpServlet {
 

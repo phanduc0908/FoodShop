@@ -6,7 +6,6 @@
 package Cart;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -23,7 +22,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class AddToCart extends HttpServlet {
 

@@ -16,7 +16,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author NhatTQ
  */
 public class ListAllProduct extends HttpServlet {
 

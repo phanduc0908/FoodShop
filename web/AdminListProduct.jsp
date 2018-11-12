@@ -1,7 +1,7 @@
 <%-- 
     Document   : AdminListProduct
     Created on : Nov 5, 2018, 11:00:58 PM
-    Author     : Phan Van Duc
+    Author     : NhatTQ
 --%>
 
 <%@page import="model.DBConnection"%>

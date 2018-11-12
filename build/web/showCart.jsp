@@ -1,7 +1,7 @@
 <%-- 
     Document   : showCart
     Created on : Oct 11, 2018, 10:11:01 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="java.util.ArrayList"%>

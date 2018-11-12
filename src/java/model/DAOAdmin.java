@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Phan Van Duc
+ * @author NhatTQ
  */
 public class DAOAdmin {
 

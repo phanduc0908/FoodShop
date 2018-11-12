@@ -7,7 +7,6 @@ package Cart;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class CancelCart extends HttpServlet {
 

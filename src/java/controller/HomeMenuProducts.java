@@ -19,7 +19,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class HomeMenuProducts extends HttpServlet {
 

@@ -17,7 +17,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author NhatTQ
  */
 public class CustomerController extends HttpServlet {
 

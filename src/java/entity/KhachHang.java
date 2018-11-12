@@ -7,7 +7,7 @@ package entity;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class KhachHang {
     private int cid;

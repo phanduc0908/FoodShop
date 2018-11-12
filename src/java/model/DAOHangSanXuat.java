@@ -14,7 +14,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author Phan Van Duc
+ * @author NhatTQ
  */
 public class DAOHangSanXuat {
 

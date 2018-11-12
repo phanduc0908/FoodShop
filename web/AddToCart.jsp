@@ -1,7 +1,7 @@
 <%-- 
     Document   : AddToCart
     Created on : Oct 11, 2018, 10:08:04 AM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="model.DAOSanPham"%>

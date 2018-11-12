@@ -1,7 +1,7 @@
 <%-- 
     Document   : LoginBody
     Created on : Oct 31, 2018, 12:29:10 PM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

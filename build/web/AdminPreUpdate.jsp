@@ -1,7 +1,7 @@
 <%-- 
     Document   : AdminPreUpdate
     Created on : Nov 5, 2018, 9:32:25 PM
-    Author     : Phan Van Duc
+    Author     : NhatTQ
 --%>
 
 <%@page import="java.sql.ResultSet"%>

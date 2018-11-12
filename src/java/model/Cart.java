@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class Cart {
     private String id, name;

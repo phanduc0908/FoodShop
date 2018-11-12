@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Phan Van Duc
+ * @author Quang Hiep
  */
 public class DAOSanPham {
 

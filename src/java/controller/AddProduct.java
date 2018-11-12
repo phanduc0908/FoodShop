@@ -19,7 +19,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author NhatTQ
  */
 public class AddProduct extends HttpServlet {
 

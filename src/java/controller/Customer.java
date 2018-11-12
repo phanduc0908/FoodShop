@@ -22,7 +22,7 @@ import model.DBConnection;
 
 /**
  *
- * @author Phan Van Duc
+ * @author NhatTQ
  */
 @WebServlet(name = "Customer", urlPatterns = {"/Customer"})
 public class Customer extends HttpServlet {

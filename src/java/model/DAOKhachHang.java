@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author HP
+ * @author Quang Hiep
  */
 public class DAOKhachHang {
 

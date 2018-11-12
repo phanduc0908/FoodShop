@@ -1,7 +1,7 @@
 <%-- 
     Document   : checkOut
     Created on : Oct 13, 2018, 12:02:49 PM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="model.DAOSanPham"%>

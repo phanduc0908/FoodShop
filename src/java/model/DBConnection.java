@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author HP
+ * @author Quang Hiep
  */
 public class DBConnection {
     Connection conn=null;

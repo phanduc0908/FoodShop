@@ -1,7 +1,7 @@
 <%-- 
     Document   : Register
     Created on : Oct 31, 2018, 12:15:15 PM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

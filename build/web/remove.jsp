@@ -1,7 +1,7 @@
 <%-- 
     Document   : remove
     Created on : Oct 14, 2018, 11:12:56 PM
-    Author     : Phan Van Duc
+    Author     : Quang Hiep
 --%>
 
 <%@page import="model.DAOSanPham"%>
