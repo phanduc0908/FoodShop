@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : HomeNavbar
     Created on : Oct 30, 2018, 11:19:02 AM
@@ -14,9 +15,15 @@
                 </div>
                 <div class="col-md-6">
                     <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                        <li><a href="Register.jsp">Đăng ký</a></li>
-                        <li><a href="Login.jsp">Đăng nhập</a></li>
-                        <li><a href="LogoutAccount" onclick="alert('Bạn có muốn đăng xuất')">Đăng xuất</a></li>
+                        <c:if test="${fullName == null}">
+                            <li><a href="Register.jsp">Đăng ký</a></li>
+                            </c:if>
+                            <c:if test="${fullName == null}">
+                            <li><a href="Login.jsp">Đăng nhập</a></li>
+                            </c:if>
+                            <c:if test="${fullName != null}">
+                            <li><a href="LogoutAccount" onclick="alert('Bạn có muốn đăng xuất')">Đăng xuất</a></li>
+                            </c:if>
                         <li><a href="ShowCart">Giỏ hàng</a></li>
                     </ul>
                 </div>
@@ -30,7 +37,7 @@
                 <a href="HomePage.jsp"><img src="images/logo_03.gif" alt="Logo"></a>
             </div>
 
-             <nav class="navbar hidden-xs hidden-sm">
+            <nav class="navbar hidden-xs hidden-sm">
                 <div class=" info">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -53,7 +60,7 @@
                                 <h5>OPEN</h5>
                                 <p>8:00 AM - 10:00 PM</p>
                             </span>
-                            </li>
+                        </li>
                     </ul>  
                 </div>
             </nav>
