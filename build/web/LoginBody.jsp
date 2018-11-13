@@ -8,7 +8,7 @@
 <div class="container">
     <div class="paging">
         <ul class="breadcrumb">
-            <li><a href="homepage.html">Home</a></li>
+            <li><a href="HomePage.jsp">Home</a></li>
             <li>Đăng nhập</li>
         </ul>
     </div>

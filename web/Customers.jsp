@@ -37,7 +37,7 @@
                     </div>
                     <div class="table">
                         <div class="row header">
-                            <div class="cell">ID</div>
+                            <div class="cell" style="padding-right: 30px;">ID</div>
                             <div class="cell">Full Name</div>
                             <div class="cell">Address</div>
                             <div class="cell">Phone</div>

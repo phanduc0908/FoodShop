@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <filter>
+        <filter-name>CartFilter</filter-name>
+        <filter-class>Filter.CartFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CartFilter</filter-name>
+        <servlet-name>ShowCart</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>CustomerController</servlet-name>
         <servlet-class>controller.CustomerController</servlet-class>
@@ -193,4 +205,7 @@
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>HomePage.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

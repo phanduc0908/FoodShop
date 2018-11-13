@@ -37,6 +37,9 @@ public class ShowCart extends HttpServlet {
         HttpSession session = request.getSession();
 
         try (PrintWriter out = response.getWriter()) {
+//            if (session.getAttribute("fullName") == null) {
+//                request.getRequestDispatcher("Login.jsp").forward(request, response);
+//            }
             if (session.getAttribute("cartID") == null) {
                 request.getRequestDispatcher("Cart.jsp").forward(request, response);
             }else{

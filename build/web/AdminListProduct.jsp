@@ -39,7 +39,7 @@
                     </div>
                     <div class="table">
                         <div class="row header">
-                            <div class="cell">ID</div>
+                            <div class="cell" style="padding-right: 20px;">ID</div>
                             <div class="cell">Tên SP</div>
                             <div class="cell">Hãng SX</div>
                             <div class="cell">Trạng thái</div>

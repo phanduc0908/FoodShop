@@ -22,7 +22,7 @@
                             <li><a href="Login.jsp">Đăng nhập</a></li>
                             </c:if>
                             <c:if test="${fullName != null}">
-                            <li><a href="LogoutAccount" onclick="alert('Bạn có muốn đăng xuất')">Đăng xuất</a></li>
+                            <li><a href="LogoutAccount" onclick="alert('Bạn đã đăng xuất khỏi hệ thống!!')">Đăng xuất</a></li>
                             </c:if>
                         <li><a href="ShowCart">Giỏ hàng</a></li>
                     </ul>
